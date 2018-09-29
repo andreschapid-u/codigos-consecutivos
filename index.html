@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Free Web tutorials">
@@ -11,38 +12,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Parcial 1</title>
+
 </head>
+
 <body>
-    
+    <header>
+        <div id="logo">
+            <img src="unicauca.png" alt="">
+        </div>
+        <div id="titulo">
+            <h2>Gestor de Consecutivos</h2>
+        </div>        
+    </header>
+    <hr>
     <div id="formulario">
+        <form action="">
+            <label for="select">Dependencia</label>
+            <select name="Dependencia" id="select">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            <hr>
+            <label for="">Subdependencia</label>
+            <select name="subdependencia" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            <hr>
+            <input type="submit" value="Generar consecutivo">
+        </form>
 
-            <form action="">
-               <label for="select">Dependencia</label>
-                <select name="" id="select">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <hr>
-                <label for="">Subdependencia</label>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <hr>
-                <input type="submit" value="Generar consecutivo">
-            </form>
-            
-        </div>
-        <div id="preview">
-            8.<span id="color-dep">111</span>.<span id="color-sub">222</span>/<samp>consecutivo</samp>
-
-        </div>
-        <script src="script.js"></script>
+    </div>
+    <hr>
+    <div id="preview">
+        8.<span id="color-dep">111</span>.<span id="color-sub">222</span>/<samp>consecutivo</samp>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
