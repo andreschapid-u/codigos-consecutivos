@@ -1,0 +1,48 @@
+{
+	"dependencias": [
+		{
+			"codigo": 1,
+			"nombre": "Decanatura",
+            "color": "234561",
+            "sub-dependencias":0
+		},
+		{
+			"codigo": 4,
+			"nombre": "Departamento de Sistemas",
+            "color": "000",
+            "sub-dependencias":1
+		},
+		{
+			"codigo": 5,
+			"nombre": "Departamento de Electrónica",
+            "color": "234591",
+            "sub-dependencias":1            
+		}
+	],
+	"sub-dependencias": [
+		[
+			{
+				"codigo": 1,
+				"nombre": "Decano",
+				"color": ""
+			},
+			{
+				"codigo": 2,
+				"nombre": "Secretaría General",
+				"color": "234567"
+			}
+		],
+		[
+			{
+				"codigo": 1,
+				"nombre": "Jefe de Departamento",
+				"color": ""
+			},
+			{
+				"codigo": 2,
+				"nombre": "Tesorería",
+				"color": "234567"
+			}
+		]
+	]
+}
