@@ -1,10 +1,12 @@
 #color-dep{
-    background-color: blueviolet;
+    background-color: rgb(76, 43, 226);
 }
 #color-sub{
     background-color:brown;
 }
-
+#generado{
+    background-color: lawngreen;
+}
 #formulario{
     display: inline-block;
 }
