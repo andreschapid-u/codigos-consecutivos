@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Free Web tutorials">
@@ -11,40 +12,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Parcial 1</title>
+
 </head>
+
 <body>
-    <div id="cabecera">
+    <header>
+        <div id="logo">
+            <img src="unicauca.png" alt="">
+        </div>
+        <div id="titulo">
+            <h2>Gestor de Consecutivos</h2>
+        </div>        
+    </header>
+    <hr>
+    <div id="formulario">
+        <form action="">
+            <label for="select">Dependencia</label>
+            <select name="Dependencia" id="select">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            <hr>
+            <label for="">Subdependencia</label>
+            <select name="subdependencia" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            <hr>
+            <input type="submit" value="Generar consecutivo">
+        </form>
 
     </div>
-    <div id="formulario">
-
-            <form action="">
-               <label for="select">Dependencia</label>
-                <select name="" id="select">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <hr>
-                <label for="">Subdependencia</label>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <hr>
-                <input type="submit" value="Generar consecutivo">
-            </form>
-            
-        </div>
-        <div id="preview">
-            8.<span id="color-dep">111</span>.<span id="color-sub">222</span>/<samp>consecutivo</samp>
-
-        </div>
-        <script src="script.js"></script>
+    <hr>
+    <div class="descripcion">
+        <p ALIGN="center" id="tituloDescripcion">
+                <strong>Bienvenido al gestor de dependencias de la facultad de ingenieria electronica y telecomunicaciones.</strong><br>
+        </p>
+        <p ALIGN="justify" id="textoDescripcion">            
+            En la opcion de dependecias usted podra encontrar las areas pertenecientes a la facultad,
+            cada area sera señalizada con un color diferente, por ejemplo la dependencia de decanatura sera identificada
+            con el color azul codigo 1. <br>En la opcion de subdependencia usted podra encontrar los cargos de la dependencia seleccionada, tambien
+            se identifican con colores, por ejemplo el color que identifica al decano es cafe y codigo 1. <br>
+            Al usted dar click en el boton <strong>Generar consecutivo</strong> se generar el codigo identificador de su documento para el
+            ejemplo sera el campo consecutivo con color rojo.
+        </p>
+        <div ALIGN="center" id="preview">
+                8.<span id="color-dep">1</span>.<span id="color-sub">1</span>/<samp id="generado">Consecutivo</samp>
+            </div>
+    </div>
+    <hr>
+    
+    <script src="script.js"></script>
 </body>
+
 </html>
