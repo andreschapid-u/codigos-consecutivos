@@ -1,26 +1,28 @@
-header {  
-    padding-top: 24px;  
+header {
+    padding-top: 24px;
     height: 175px;
-    background-color: #0D4185 ;
-    display: flex;    
+    background-color: #0D4185;
+    display: flex;
     flex-direction: row;
-    justify-content:center;    
+    justify-content: center;
 }
-#logoU{
-    background: url(uni3.png) no-repeat;        
+
+#logoU {
+    background: url(uni3.png) no-repeat;
     padding-top: 27px;
     width: 150px;
-    
 }
-#titulo{
+
+#titulo {
     font-size: 35px;
     font-weight: bold;
     line-height: 30px;
     color: #FFFFFF;
-    width: 200px;    
+    width: 200px;
     text-align: center;
 }
-#tituloAyuda{
+
+#tituloAyuda {
     font-size: 15px;
     font-weight: bold;
     line-height: 25px;
@@ -29,25 +31,27 @@ header {
     float: left;
     text-align: center;
 }
-#formulario{          
+
+#formulario {
     background: url(fondo.PNG) no-repeat;
     width: 240px;
-    height: 200px;     
+    height: 200px;
     padding: 60px;
     border: 2px solid rgb(204, 208, 209);
     border-radius: 5px;
     margin: auto;
     line-height: 45px;
 }
-#subTitulo{
+
+#subTitulo {
     font-size: 25px;
     font-weight: bold;
-    color:#26467E;
+    color: #26467E;
     width: 130px;
-    text-align-last:center;
-    
-}    
-#boton{
+    text-align-last: center;
+}
+
+#boton {
     text-decoration: none;
     padding: 3px;
     padding-left: 10px;
@@ -59,29 +63,42 @@ header {
     background-color: #26467E;
     border-radius: 15px;
     border: 3px double #FFFFFF;
-     
 }
-#Bienvenido{
-    text-align :center;
+
+#Bienvenido {
+    text-align: center;
 }
-#textoDescripcion{
-    text-align : justify;
+
+#textoDescripcion {
+    text-align: justify;
 }
-#color-dep{
+
+#color-dep {
     background-color: rgb(55, 12, 245);
 }
-#color-sub{
-    background-color:rgb(221, 94, 94);
+
+#color-sub {
+    background-color: rgb(221, 94, 94);
 }
-#generado{
+
+#generado {
     background-color: rgb(230, 233, 87);
 }
-#fondo{
+
+#fondo {
     padding-top: 5%
 }
-#ayuda{
+
+#ayuda {
     font-size: 25px;
 }
-body {    
-    text-align:center;    
+
+body {
+    text-align: center;
+}
+
+#preview>span {
+    font-size: 1.7rem;
+    padding: 2px;
+    border-radius: 10px;
 }
