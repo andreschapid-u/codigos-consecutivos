@@ -77,13 +77,24 @@ if (!file_exists($arc_dependencias) || filesize($arc_consecutivo) == 0) {
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'GET'){
 
     // SI HAY UNA SUB_DEPENDENCIA SE QUIERE CONSULTAR
-    if(isset($_GET["sub_dependencia"])){
-        $cantidad = intval($_GET["sub_dependencia"]);
+    if(isset($_GET["cod_dependencia"])){
+        $codigo = intval($_GET["cod_dependencia"]);
+        $esta = false;
         $datos = leerArchivo($arc_dependencias);
-        if($cantidad < 0 || $cantidad+1 > count($datos->sub_dependencias)){
-            error();
+        $res =new stdClass();
+        foreach ($datos->dependencias as $dependencia) {
+            if($dependencia->codigo == $codigo){
+                $res->color = $dependencia->color;
+                $res->sub_dependencias = $datos->sub_dependencias[$dependencia->sub_dependencias];
+                $esta = true;
+                break;
+            }
         }
-        responder($datos->sub_dependencias[intval($_GET["sub_dependencia"])]);
+
+        if ($esta) {
+            responder($res);
+        }
+        error("El código de dependencia no existe!");
     }
 
     // OCURRE SIEMPRE Y CUANDO NO HAYA PASO DE VARIABLES
