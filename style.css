@@ -32,7 +32,7 @@ header {
     text-align: center;
 }
 
-#formulario {    
+#formulario {
     background: url(fondo.PNG) no-repeat;
     width: 240px;
     height: 200px;
@@ -66,7 +66,8 @@ header {
     border-radius: 15px;
     border: 3px double #FFFFFF;
 }
-#vistaFinal{
+
+#vistaFinal {
     width: 340px;
     height: 100px;
     padding: 10px;
@@ -75,13 +76,15 @@ header {
     margin: auto;
     line-height: 25px;
 }
-#consecutivo{   
-    margin-top: 0%;      
-    color: #0D4185;    
+
+#consecutivo {
+    margin-top: 0%;
+    color: #0D4185;
     border-radius: 10px;
     font-size: 25px;
-    font-weight: bold;        
+    font-weight: bold;
 }
+
 #Bienvenido {
     text-align: center;
 }
@@ -102,7 +105,6 @@ header {
     background-color: rgb(230, 233, 87);
 }
 
-
 #ayuda {
     font-size: 25px;
 }
@@ -111,7 +113,8 @@ body {
     text-align: center;
 }
 
-#preview>span {
+#preview>span,
+#vistaFinal>span {
     font-size: 1.7rem;
     padding: 2px;
     border-radius: 10px;

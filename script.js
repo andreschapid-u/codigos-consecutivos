@@ -9,7 +9,7 @@ function ajax(metodos, url, funcionEjecutar) {
                 funcionEjecutar(JSON.parse(this.responseText));
                 // funcionEjecutar(this.responseText);
             } else {
-              
+
             }
         }
     };
@@ -53,7 +53,7 @@ function llenarSubDependencias(datos) {
     option.text = 'Seleccione';
     option.value = '-1';
     select.appendChild(option);
-    var dependencia = document.querySelector("#color-dep");
+    var dependencia = document.querySelector("#dep");
     if (datos.status == 1) {
         // log(datos)
         dependencia.style.backgroundColor = "#" + datos.datos.color;
