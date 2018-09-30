@@ -80,3 +80,15 @@ function leerArchivo($nombreArchivo){
 function escribirArchivo($nombreArchivo,$datos){
     file_put_contents($nombreArchivo, json_encode($datos));
 }
+
+// Funciones de respuesta
+function error($mensajeError = "Error")
+{
+    $respuesta = new Respuesta(0,$mensajeError);
+    exit(json_encode($respuesta));
+}
+function responder($datos, $mensaje = "Success")
+{
+    $respuesta = new Respuesta(1,$mensaje, $datos);
+    exit(json_encode($respuesta));
+}
