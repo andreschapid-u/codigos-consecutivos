@@ -21,4 +21,25 @@ function log(data) {
     console.log(data);
 }
 
-ajax('GET', urlServer, log);
+// ajax('GET', urlServer, log);
+ajax('GET', urlServer, llenarDependencias);
+
+
+// CARGA CON DATOS EL SELECT DE DEPENDENCIAS
+function llenarDependencias(datos) {
+    var select = document.querySelector('#select1');
+    select.innerHTML = '';
+    var option = document.createElement('option');
+    option.text = 'Seleccione';
+    option.value = '-1';
+    select.appendChild(option);
+    for (const x in datos.datos) {
+        var dep = datos.datos[x];
+        var opt = document.createElement('option');
+        opt.text = dep.nombre;
+        opt.value = dep.sub_dependencias;
+        select.appendChild(opt);
+        console.log(dep.nombre);
+        console.log(dep.sub_dependencias);
+    }
+}
