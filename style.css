@@ -1,43 +1,87 @@
-#color-dep{
-    background-color: rgb(76, 43, 226);
+header {  
+    padding-top: 24px;  
+    height: 175px;
+    background-color: #0D4185 ;
+    display: flex;    
+    flex-direction: row;
+    justify-content:center;    
 }
-#color-sub{
-    background-color:brown;
-}
-#generado{
-    background-color: lawngreen;
-}
-#formulario{
-    width: 200px;
-    height: 150px;   
-    background-color: rgb(120, 143, 150);
-    padding: 25px;
-    border: 2px solid grey;
-    border-radius: 5px;
-    margin: auto;
-}
-header{
-    display: block;    
-    padding: 10px 20px;
-    background-color: rgb(53, 53, 145);
-}
-#logo{
-    height: 100px;
-    display: inline-block;
-    width: 10%;
-	text-align: center;
-	font-family: 'cambria';
-}
-#logo>img{
-    width: 100%;
+#logoU{
+    background: url(uni3.png) no-repeat;        
+    padding-top: 27px;
+    width: 150px;
+    
 }
 #titulo{
-    height: 100px;
-    width: 80%;
-	font-family: 'impact', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 30px;
-	color: #ffffff;
-    text-align: center;    
-    display: inline-block;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #FFFFFF;
+    width: 200px;    
+    text-align: center;
+}
+#tituloAyuda{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    color: #FFFFFF;
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+#formulario{          
+    background: url(fondo.PNG) no-repeat;
+    width: 240px;
+    height: 200px;     
+    padding: 60px;
+    border: 2px solid rgb(204, 208, 209);
+    border-radius: 5px;
     margin: auto;
+    line-height: 45px;
+}
+#subTitulo{
+    font-size: 25px;
+    font-weight: bold;
+    color:#26467E;
+    width: 130px;
+    text-align-last:center;
+    
+}    
+#boton{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    color: #FFFFFF;
+    background-color: #26467E;
+    border-radius: 15px;
+    border: 3px double #FFFFFF;
+     
+}
+#Bienvenido{
+    text-align :center;
+}
+#textoDescripcion{
+    text-align : justify;
+}
+#color-dep{
+    background-color: rgb(55, 12, 245);
+}
+#color-sub{
+    background-color:rgb(221, 94, 94);
+}
+#generado{
+    background-color: rgb(230, 233, 87);
+}
+#fondo{
+    padding-top: 5%
+}
+#ayuda{
+    font-size: 25px;
+}
+body {    
+    text-align:center;    
 }
