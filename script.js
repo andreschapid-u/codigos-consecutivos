@@ -43,3 +43,30 @@ function llenarDependencias(datos) {
         console.log(dep.sub_dependencias);
     }
 }
+
+function llenarSubDependencias(datos) {
+    var select = document.querySelector('#select2');
+    // select.innerHTML = '';
+    var option = document.createElement('option');
+    option.text = 'Seleccione';
+    option.value = '-1';
+    select.appendChild(option);
+    for (const x in datos.datos) {
+        var dep = datos.datos[x];
+        var opt = document.createElement('option');
+        opt.text = dep.nombre;
+        opt.value = dep.sub_dependencias;
+        select.appendChild(opt);
+        console.log(dep.nombre);
+        console.log(dep.sub_dependencias);
+    }
+}
+
+
+document.querySelector('#select1').addEventListener('change', function() {
+    if (this.value != -1) {
+        console.log(this.value);
+
+        ajax('GET', urlServer + '?sub_dependencia=' + this.value, log);
+    }
+});
