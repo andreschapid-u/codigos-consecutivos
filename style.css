@@ -1,7 +1,7 @@
 header {
     padding-top: 24px;
     height: 175px;
-    background-color: #0D4185;
+    background-color: #0d4185;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -17,7 +17,7 @@ header {
     font-size: 35px;
     font-weight: bold;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
     width: 200px;
     text-align: center;
 }
@@ -26,13 +26,14 @@ header {
     font-size: 15px;
     font-weight: bold;
     line-height: 25px;
-    color: #FFFFFF;
+    color: #ffffff;
     width: 200px;
     float: left;
     text-align: center;
 }
 
 #formulario {
+    display: inline-block;
     background: url(fondo.PNG) no-repeat;
     width: 240px;
     height: 200px;
@@ -48,7 +49,7 @@ header {
 #subTitulo {
     font-size: 25px;
     font-weight: bold;
-    color: #0D4185;
+    color: #0d4185;
     width: 130px;
     text-align-last: center;
 }
@@ -61,15 +62,15 @@ header {
     font-family: helvetica;
     font-weight: 300;
     font-size: 25px;
-    color: #FFFFFF;
-    background-color: #0D4185;
+    color: #ffffff;
+    background-color: #0d4185;
     border-radius: 15px;
-    border: 3px double #FFFFFF;
+    border: 3px double #ffffff;
 }
 
 #vistaFinal {
+    display: inline-block;
     width: 340px;
-    height: 100px;
     padding: 10px;
     border: 2px solid rgb(204, 208, 209);
     border-radius: 5px;
@@ -79,7 +80,7 @@ header {
 
 #consecutivo {
     margin-top: 0%;
-    color: #0D4185;
+    color: #0d4185;
     border-radius: 10px;
     font-size: 25px;
     font-weight: bold;
@@ -113,9 +114,27 @@ body {
     text-align: center;
 }
 
+#preview,
+#vistaFinal {
+    font-size: 2rem;
+}
+
 #preview>span,
 #vistaFinal>span {
-    font-size: 1.7rem;
-    padding: 2px;
+    padding: 2px 3px;
     border-radius: 10px;
+}
+
+select {
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#error {
+    display: none;
+    padding: 20px;
+    background-color: red;
+    color: white;
 }
