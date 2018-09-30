@@ -46,7 +46,7 @@ header {
     line-height: 45px;
 }
 
-#subTitulo {
+.subTitulo {
     font-size: 25px;
     font-weight: bold;
     color: #0d4185;
