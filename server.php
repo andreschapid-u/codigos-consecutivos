@@ -33,6 +33,21 @@ class Dependencia
     }
 }
 
+//Clase con formato de respuesta
+class Respuesta{
+    /*
+        $status > Estado de la respuesta, 0 => Error, 1 => Success
+    */
+    public $status;
+    public $mensaje;
+    public $datos;
+    public function __construct($status,$mensaje,$datos=null) {
+        $this->status = $status;
+        $this->mensaje = $mensaje;
+        $this->datos = $datos;
+    }
+}
+
 // verificamos si el archivo no existe o esta vacio
 if (!file_exists($arc_consecutivo) || filesize($arc_consecutivo) == 0) {
     $codigo = new stdClass();
