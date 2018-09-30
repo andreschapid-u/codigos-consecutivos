@@ -9,7 +9,7 @@ function ajax(metodos, url, funcionEjecutar) {
                 funcionEjecutar(JSON.parse(this.responseText));
                 // funcionEjecutar(this.responseText);
             } else {
-                alert('ERROR');
+              
             }
         }
     };
