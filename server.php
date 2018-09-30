@@ -92,6 +92,13 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'GET'){
     responder($todo->dependencias);
 }
 
+// SE EJECUTA SI LA PETICION ES POR EL METODO POST
+if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST'){
+    $datos = leerArchivo($arc_consecutivo);
+    $datos->valor++;
+    escribirArchivo($arc_consecutivo,$datos);
+    responder($datos->valor);
+}
 
 // FUNCIONES LECTURA ESCRITURA ARCHIVOS
 function leerArchivo($nombreArchivo){
