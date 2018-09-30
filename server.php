@@ -37,7 +37,7 @@ class Dependencia
 if (!file_exists($arc_consecutivo) || filesize($arc_consecutivo) == 0) {
     $codigo = new stdClass();
     $codigo->valor = 0;
-    file_put_contents($arc_consecutivo, json_encode($codigo));
+    escribirArchivo($arc_consecutivo,$codigo);
 }
 
 // verificamos si el archivo no existe o esta vacio
@@ -53,9 +53,9 @@ if (!file_exists($arc_dependencias) || filesize($arc_consecutivo) == 0) {
         new SubDependencia(2, "Secretaría General", "9999ff")
     ],[
         new SubDependencia(1, "Jefe de Departamento", "808000"),
-        new SubDependencia(1, "Tesorería", "ffff00")
+        new SubDependencia(2, "Tesorería", "ffff00")
     ]];
-    file_put_contents($arc_dependencias, json_encode($archivo));
+    escribirArchivo($arc_dependencias, $archivo);
 }
 
 // FUNCIONES LECTURA ESCRITURA ARCHIVOS
