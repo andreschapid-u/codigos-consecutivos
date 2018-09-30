@@ -32,7 +32,7 @@ header {
     text-align: center;
 }
 
-#formulario {
+#formulario {    
     background: url(fondo.PNG) no-repeat;
     width: 240px;
     height: 200px;
@@ -40,13 +40,15 @@ header {
     border: 2px solid rgb(204, 208, 209);
     border-radius: 5px;
     margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     line-height: 45px;
 }
 
 #subTitulo {
     font-size: 25px;
     font-weight: bold;
-    color: #26467E;
+    color: #0D4185;
     width: 130px;
     text-align-last: center;
 }
@@ -60,11 +62,26 @@ header {
     font-weight: 300;
     font-size: 25px;
     color: #FFFFFF;
-    background-color: #26467E;
+    background-color: #0D4185;
     border-radius: 15px;
     border: 3px double #FFFFFF;
 }
-
+#vistaFinal{
+    width: 340px;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid rgb(204, 208, 209);
+    border-radius: 5px;
+    margin: auto;
+    line-height: 25px;
+}
+#consecutivo{   
+    margin-top: 0%;      
+    color: #0D4185;    
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;        
+}
 #Bienvenido {
     text-align: center;
 }
@@ -85,9 +102,6 @@ header {
     background-color: rgb(230, 233, 87);
 }
 
-#fondo {
-    padding-top: 5%
-}
 
 #ayuda {
     font-size: 25px;
