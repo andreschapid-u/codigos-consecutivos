@@ -59,7 +59,7 @@ if (!file_exists($arc_consecutivo) || filesize($arc_consecutivo) == 0) {
 if (!file_exists($arc_dependencias) || filesize($arc_consecutivo) == 0) {
     $archivo = new stdClass();
     $archivo->dependencias=[
-        new Dependencia(1, "Decanatura", "0000080", 0),
+        new Dependencia(1, "Decanatura", "000080", 0),
         new Dependencia(4, "Departamento de Sistemas", "800080", 1),
         new Dependencia(5, "Departamento de Electrónica", "008080", 1)
     ];
@@ -94,7 +94,39 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'GET'){
         if ($esta) {
             responder($res);
         }
-        error("El código de dependencia no existe!");
+        error("El código de la dependencia no existe!");
+    }
+
+    if(isset($_GET["cod_subdependencia"]) && isset($_GET["dependencia"])){
+        $codSub = intval($_GET["cod_subdependencia"]);
+        $codDep = intval($_GET["dependencia"]);
+        $estaDep = false;
+        $estaSub = false;
+        $datos = leerArchivo($arc_dependencias);
+        $res =new stdClass();
+        foreach ($datos->dependencias as $dependencia) {
+            if($dependencia->codigo == $codDep){
+                $res->sub_dependencias = $datos->sub_dependencias[$dependencia->sub_dependencias];
+                $estaDep = true;
+                break;
+            }
+        }
+        if(!$estaDep){
+            error("El código de la dependencia no existe!");
+        }
+        foreach ($res->sub_dependencias as $sub_dependencia) {
+            if($sub_dependencia->codigo == $codSub){
+                $res->sub_dependencias = null;
+                $res->color = $sub_dependencia->color;
+                $estaSub = true;
+                break;
+            }
+        }
+
+        if (!$estaSub) {
+            error("El código de la subdependencia no existe!");
+        }
+        responder($res);
     }
 
     // OCURRE SIEMPRE Y CUANDO NO HAYA PASO DE VARIABLES

@@ -39,28 +39,39 @@ function llenarDependencias(datos) {
         opt.text = dep.nombre;
         opt.value = dep.codigo;
         select.appendChild(opt);
-        console.log(dep.nombre);
-        console.log(dep.sub_dependencias);
+        // console.log(dep.nombre);
+        // console.log(dep.sub_dependencias);
     }
 }
 
 function llenarSubDependencias(datos) {
-    var color_dependencia = datos.datos.color;
-    var sub_dependencias = datos.datos.sub_dependencias;
+    var select1 = document.querySelector('#select1').value;
+    log(select1)
     var select = document.querySelector('#select2');
     select.innerHTML = '';
     var option = document.createElement('option');
     option.text = 'Seleccione';
     option.value = '-1';
     select.appendChild(option);
-    for (const x in sub_dependencias) {
-        var dep = sub_dependencias[x];
-        var opt = document.createElement('option');
-        opt.text = dep.nombre;
-        opt.value = dep.codigo;
-        select.appendChild(opt);
-        console.log(dep.nombre);
-        console.log(dep.codigo);
+    var dependencia = document.querySelector("#color-dep");
+    if (datos.status == 1) {
+        // log(datos)
+        dependencia.style.backgroundColor = "#" + datos.datos.color;
+        dependencia.style.color = "#ffffff";
+        dependencia.innerHTML = select1;
+        // dependencia.sty = datos.datos.color;
+        var sub_dependencias = datos.datos.sub_dependencias;
+        for (const x in sub_dependencias) {
+            var dep = sub_dependencias[x];
+            var opt = document.createElement('option');
+            opt.text = dep.nombre;
+            opt.value = dep.codigo;
+            select.appendChild(opt);
+            // console.log(dep.nombre);
+            // console.log(dep.codigo);
+        }
+    } else {
+
     }
 }
 
@@ -70,6 +81,17 @@ document.querySelector('#select1').addEventListener('change', function() {
         console.log(this.value);
         // ajax('GET', urlServer + '?cod_dependencia=' + this.value, log);
         ajax('GET', urlServer + '?cod_dependencia=' + this.value, llenarSubDependencias);
+    }
+});
+
+document.querySelector('#select2').addEventListener('change', function() {
+    if (this.value != -1) {
+        var dep = document.querySelector("#select1").value;
+        console.log(this.value);
+        ajax('GET', urlServer + '?cod_subdependencia=' + this.value + '&dependencia=' +
+            dep, log);
+        // ajax('GET', urlServer + '?cod_subdependencia=' + this.value + '&dependencia=' +
+        //     dep, log);
     }
 });
 
