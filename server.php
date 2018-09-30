@@ -73,6 +73,26 @@ if (!file_exists($arc_dependencias) || filesize($arc_consecutivo) == 0) {
     escribirArchivo($arc_dependencias, $archivo);
 }
 
+// SI LA PETICION ES POR EL METODO GET
+if(strtoupper($_SERVER['REQUEST_METHOD']) === 'GET'){
+
+    // SI HAY UNA SUB_DEPENDENCIA SE QUIERE CONSULTAR
+    if(isset($_GET["sub_dependencia"])){
+        $cantidad = intval($_GET["sub_dependencia"]);
+        $datos = leerArchivo($arc_dependencias);
+        if($cantidad < 0 || $cantidad+1 > count($datos->sub_dependencias)){
+            error();
+        }
+        responder($datos->sub_dependencias[intval($_GET["sub_dependencia"])]);
+    }
+
+    // OCURRE SIEMPRE Y CUANDO NO HAYA PASO DE VARIABLES
+    // EN LA URL, EJEMPLO ACCESO AL INDEX
+    $todo = leerArchivo($arc_dependencias);
+    responder($todo->dependencias);
+}
+
+
 // FUNCIONES LECTURA ESCRITURA ARCHIVOS
 function leerArchivo($nombreArchivo){
     return json_decode(file_get_contents($nombreArchivo));
