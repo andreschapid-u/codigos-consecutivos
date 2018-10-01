@@ -8,7 +8,7 @@ function ajax(metodos, url, funcionEjecutar, datos = '') {
             if (this.status == 200) {
                 funcionEjecutar(JSON.parse(this.responseText));
             } else {
-                mostrarError('Ocurrio un error en la petición!!');
+                mostrarMensaje('Ocurrio un error en la petición!!');
             }
         }
     };
@@ -42,6 +42,7 @@ function llenarDependencias(datos) {
 
 function llenarSubDependencias(datos) {
     if (datos.status == 1) {
+        // mostrarMensaje(datos.mensaje, true);
         var select1 = document.querySelector('#select1');
         var select = document.querySelector('#select2');
         select.innerHTML = '';
@@ -71,7 +72,7 @@ function llenarSubDependencias(datos) {
             select.appendChild(opt);
         }
     } else {
-        mostrarError(datos.mensaje);
+        mostrarMensaje(datos.mensaje);
     }
 }
 
@@ -84,7 +85,7 @@ function elegirSubDependencia(datos) {
         subdependencia.style.backgroundColor = '#' + datos.datos.color;
         subdependencia.style.color = '#ffffff';
     } else {
-        mostrarError(datos.mensaje);
+        mostrarMensaje(datos.mensaje);
     }
 }
 
@@ -108,6 +109,8 @@ document.querySelector('#select1').addEventListener('change', function() {
         option.value = '-1';
         select.appendChild(option);
         document.querySelector('#generado').innerHTML = 'Generar';
+        document.querySelector('#selDep').innerHTML = '';
+        document.querySelector('#selSub').innerHTML = '';
     }
 });
 
@@ -122,6 +125,7 @@ document.querySelector('#select2').addEventListener('change', function() {
         subdependencia.style.backgroundColor = 'transparent';
         subdependencia.style.color = '#000';
         document.querySelector('#generado').innerHTML = 'Generar';
+        document.querySelector('#selSub').innerHTML = '';
     }
 });
 
@@ -130,7 +134,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     var dep = document.querySelector('#select1').value;
     var subDep = document.querySelector('#select2').value;
     if (dep == -1 || subDep == -1) {
-        mostrarError('Debe seleccionar una dependecia y subdepencia primero!!');
+        mostrarMensaje('Debe seleccionar una dependecia y subdepencia primero!!');
     } else {
         ajax('POST', urlServer, consecutivoGenerado);
     }
@@ -139,12 +143,18 @@ document.querySelector('form').addEventListener('submit', function(event) {
 function consecutivoGenerado(datos) {
     if (datos.status == 1) {
         document.querySelector('#generado').innerHTML = datos.datos;
+        mostrarMensaje(datos.mensaje, true);
     } else {
-        mostrarError(datos.mensaje);
+        mostrarMensaje(datos.mensaje);
     }
 }
 
-function mostrarError(mensaje) {
+function mostrarMensaje(mensaje, correcto = false) {
+    if (correcto) {
+        document.querySelector('#error').style.backgroundColor = 'green';
+    } else {
+        document.querySelector('#error').style.backgroundColor = 'red';
+    }
     document.querySelector('#error').innerHTML = mensaje;
     document.querySelector('#error').style.display = 'block';
     setTimeout(() => {

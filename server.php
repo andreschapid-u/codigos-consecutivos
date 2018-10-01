@@ -140,7 +140,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST'){
     $datos = leerArchivo($arc_consecutivo);
     $datos->valor++;
     escribirArchivo($arc_consecutivo,$datos);
-    responder($datos->valor);
+    responder($datos->valor, "Código generado exitosamente!");
 }
 
 // FUNCIONES LECTURA ESCRITURA ARCHIVOS

@@ -133,18 +133,28 @@ select {
 }
 
 #error {
+    width: 600px;
+    margin: auto;
     display: none;
     padding: 20px;
     background-color: red;
     color: white;
+    font-size: 1.3rem;
+    border-radius: 50px;
 }
 
 .seleccion {
-    width: 500px;
+    width: 320px;
     padding: 20px;
     font-size: 1.3rem;
     border: 2px solid rgb(204, 208, 209);
     border-radius: 5px;
     margin: auto;
     line-height: 25px;
+    margin: 10px;
+}
+
+.inline {
+    display: inline-block;
+    margin: 10px;
 }

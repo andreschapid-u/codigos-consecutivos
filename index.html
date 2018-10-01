@@ -38,23 +38,26 @@
                 <input id="boton" type="submit" value="Generar Consecutivo">
             </form>
         </div>
-        <div class="vistaFinal">
-            <div id="error"></div>
-            <p id="consecutivo">Consecutivo Generado </p>
-            <span id="fac">8</span>.<span id="dep">Elegir</span>.<span id="subDep">Elegir</span>/<span id="generado">Generar</span>
-            <div id="ayuda">
-                <br><a href="./Ayuda.html" id="desc">AYUDA</a>
+        <div class="inline">
+            <div class="seleccion">
+                <label class="subTitulo">Seleccionaste</label><br>
+                <label class="subTitulo">Dependencia</label>
+                <label id="selDep"></label>
+                <br>
+                <label class="subTitulo">Subdependencia</label>
+                <label id="selSub"></label>
+                <br>
+            </div>
+            <div class="vistaFinal">
+
+                <p id="consecutivo">Consecutivo Generado </p>
+                <span id="fac">8</span>.<span id="dep">Elegir</span>.<span id="subDep">Elegir</span>/<span id="generado">Generar</span>
+                <div id="ayuda">
+                    <br><a href="./Ayuda.html" id="desc">AYUDA</a>
+                </div>
             </div>
         </div>
-        <div class="seleccion">
-            <label class="subTitulo">Seleccionaste</label><br>
-            <label class="subTitulo">Dependencia</label>
-            <label id="selDep"></label>
-            <br>
-            <label class="subTitulo">Subdependencia</label>
-            <label id="selSub"></label>
-            <br>
-        </div>
+        <div id="error"></div>
     </div>
     <script src="script.js"></script>
 </body>
