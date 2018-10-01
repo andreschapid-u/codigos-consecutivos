@@ -56,6 +56,7 @@ function llenarSubDependencias(datos) {
         dependencia.innerHTML = select1.value;
         subdependencia.style.backgroundColor = 'transparent';
         subdependencia.innerHTML = 'Elegir';
+        subdependencia.style.color = '#000';
 
         document.querySelector('#selDep').innerHTML = select1[select1.selectedIndex].innerHTML;
         document.querySelector('#selSub').innerHTML = '';
