@@ -20,6 +20,7 @@ function log(data) {
     console.log(data);
 }
 
+// Se ejecuta cuando se accede a la página
 ajax('GET', urlServer, llenarDependencias);
 
 // CARGA CON DATOS EL SELECT DE DEPENDENCIAS
