@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Free Web tutorials">
+    <meta name="description" content="Parcial Lab. Software 3">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="Karen Liliana Guancha">
     <meta name="author" content="Luisa Fernanda Gomez">
@@ -19,7 +19,7 @@
     <header>
         <a href="http://www.unicauca.edu.co/versionP/" id="logoU"></a>
         <p id=separador></p>
-        <p id="titulo">Gestion de Dependencias</p>
+        <p class="titulo">Gestion de Dependencias</p>
     </header>
 
     <div id="fondo">
@@ -38,7 +38,7 @@
                 <input id="boton" type="submit" value="Generar Consecutivo">
             </form>
         </div>
-        <div id="vistaFinal">
+        <div class="vistaFinal">
             <div id="error"></div>
             <p id="consecutivo">Consecutivo Generado </p>
             <span id="fac">8</span>.<span id="dep">Elegir</span>.<span id="subDep">Elegir</span>/<span id="generado">Generar</span>
@@ -46,9 +46,15 @@
                 <br><a href="./Ayuda.html" id="desc">AYUDA</a>
             </div>
         </div>
-
-
-
+        <div class="seleccion">
+            <label class="subTitulo">Seleccionaste</label><br>
+            <label class="subTitulo">Dependencia</label>
+            <label id="selDep"></label>
+            <br>
+            <label class="subTitulo">Subdependencia</label>
+            <label id="selSub"></label>
+            <br>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

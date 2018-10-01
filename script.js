@@ -7,8 +7,9 @@ function ajax(metodos, url, funcionEjecutar, datos = '') {
         if (this.readyState == XMLHttpRequest.DONE) {
             if (this.status == 200) {
                 funcionEjecutar(JSON.parse(this.responseText));
-                // funcionEjecutar(this.responseText);
-            } else {}
+            } else {
+                mostrarError('Ocurrio un error en la petición!!');
+            }
         }
     };
     xmlhttp.open(metodos, url, true);
@@ -19,7 +20,6 @@ function log(data) {
     console.log(data);
 }
 
-// ajax('GET', urlServer, log);
 ajax('GET', urlServer, llenarDependencias);
 
 // CARGA CON DATOS EL SELECT DE DEPENDENCIAS
@@ -36,15 +36,12 @@ function llenarDependencias(datos) {
         opt.text = dep.nombre;
         opt.value = dep.codigo;
         select.appendChild(opt);
-        // console.log(dep.nombre);
-        // console.log(dep.sub_dependencias);
     }
 }
 
 function llenarSubDependencias(datos) {
-    // log(select1);
     if (datos.status == 1) {
-        var select1 = document.querySelector('#select1').value;
+        var select1 = document.querySelector('#select1');
         var select = document.querySelector('#select2');
         select.innerHTML = '';
         var option = document.createElement('option');
@@ -56,10 +53,13 @@ function llenarSubDependencias(datos) {
 
         dependencia.style.backgroundColor = '#' + datos.datos.color;
         dependencia.style.color = '#ffffff';
-        dependencia.innerHTML = select1;
+        dependencia.innerHTML = select1.value;
         subdependencia.style.backgroundColor = 'transparent';
         subdependencia.innerHTML = 'Elegir';
-        // dependencia.sty = datos.datos.color;
+
+        document.querySelector('#selDep').innerHTML = select1[select1.selectedIndex].innerHTML;
+        document.querySelector('#selSub').innerHTML = '';
+
         var sub_dependencias = datos.datos.sub_dependencias;
         for (const x in sub_dependencias) {
             var dep = sub_dependencias[x];
@@ -67,8 +67,6 @@ function llenarSubDependencias(datos) {
             opt.text = dep.nombre;
             opt.value = dep.codigo;
             select.appendChild(opt);
-            // console.log(dep.nombre);
-            // console.log(dep.codigo);
         }
     } else {
         mostrarError(datos.mensaje);
@@ -79,6 +77,7 @@ function elegirSubDependencia(datos) {
     if (datos.status == 1) {
         var select = document.querySelector('#select2');
         var subdependencia = document.querySelector('#subDep');
+        document.querySelector('#selSub').innerHTML = select[select.selectedIndex].innerHTML;
         subdependencia.innerHTML = select.value;
         subdependencia.style.backgroundColor = '#' + datos.datos.color;
         subdependencia.style.color = '#ffffff';
@@ -90,7 +89,6 @@ function elegirSubDependencia(datos) {
 document.querySelector('#select1').addEventListener('change', function() {
     if (this.value != -1) {
         console.log(this.value);
-        // ajax('GET', urlServer + '?cod_dependencia=' + this.value, log);
         ajax('GET', urlServer + '?cod_dependencia=' + this.value, llenarSubDependencias);
     } else {
         var dependencia = document.querySelector('#dep');
@@ -116,8 +114,6 @@ document.querySelector('#select2').addEventListener('change', function() {
         var dep = document.querySelector('#select1').value;
         console.log(this.value);
         ajax('GET', urlServer + '?cod_subdependencia=' + this.value + '&dependencia=' + dep, elegirSubDependencia);
-        // ajax('GET', urlServer + '?cod_subdependencia=' + this.value + '&dependencia=' +
-        //     dep, log);
     } else {
         var subdependencia = document.querySelector('#subDep');
         subdependencia.innerHTML = 'Elegir';
@@ -141,7 +137,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
 function consecutivoGenerado(datos) {
     if (datos.status == 1) {
         document.querySelector('#generado').innerHTML = datos.datos;
-        log(datos.datos.datos);
     } else {
         mostrarError(datos.mensaje);
     }
